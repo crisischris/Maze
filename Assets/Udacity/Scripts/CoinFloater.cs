@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class CoinFloater : MonoBehaviour {
 
+    //occilate coin y position
 
-
-    // Use this for initialization
-    void Start () {
-
-
-
-
-
-
+    void Start ()
+    {
 
     }
 	
-	// Update is called once per frame
 	void Update () {
 
-        transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, 3) ,transform.position.z);
-
-                        
-
-
+        transform.position = new Vector3(transform.position.x, 3 + Mathf.Sin (Time.time*2), transform.position.z);
 
     }
 }
