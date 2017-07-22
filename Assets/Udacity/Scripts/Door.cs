@@ -9,7 +9,17 @@ public class Door : MonoBehaviour
  bool locked = true;
  bool opening = false;
  float doorPos;
- public AudioClip sound;
+ //public AudioSource[] sources = new AudioSource [2];
+
+
+    public AudioClip soundOpening;
+    public AudioClip soundLocked;
+
+
+    void start()
+    {
+        
+    }
 
     void Update() {
 
@@ -34,12 +44,17 @@ public class Door : MonoBehaviour
         {
             opening = true;
             print(opening);
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(soundOpening);
+
         }
 
 
         else
         {
-            GetComponent<AudioSource>().Play();
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(soundLocked);
+
         }
                  
     }
