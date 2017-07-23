@@ -15,5 +15,9 @@ public class CoinFloater : MonoBehaviour {
 
         transform.position = new Vector3(transform.position.x, 3 + Mathf.Sin (Time.time*2), transform.position.z);
 
+        transform.Rotate(Vector3.up * (Time.deltaTime*100));
+
+      
+
     }
 }

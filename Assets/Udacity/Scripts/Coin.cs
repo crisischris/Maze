@@ -13,28 +13,25 @@ public class Coin : MonoBehaviour {
     
     void start()
     {
+        
+            
+
+        
 
     }
 
-     public void OnCoinClicked() {
+    public void OnCoinClicked() {
 
         // Locate the instantiated coin position.
         
         xpos = coin.transform.position.x;
         zpos = coin.transform.position.z;
 
-        //instantiate the poof prefab - dpending on Quaternion - and destroy the coin prefrab unpon click
+        //instantiate the poof prefab 
 
-        if(zpos == 42 || zpos == 47 || zpos == 103.5f)
 
         {
             Object.Instantiate(poof, new Vector3(xpos, 0, zpos), Quaternion.Euler(-90, 0, 0));
-                    }
-
-        else
-
-        {
-            Object.Instantiate(poof, new Vector3(xpos, 0, zpos), Quaternion.Euler(0, 0, -90));
         }
 
         Destroy(coin);

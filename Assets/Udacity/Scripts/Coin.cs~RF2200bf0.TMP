@@ -1,0 +1,42 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Coin : MonoBehaviour {
+
+    public GameObject poof;
+    public GameObject coin;
+    public GameObject door;
+    public GameObject poofPlaceHolder;
+
+    float xpos;
+    float zpos;
+    
+    void start()
+    {
+
+    }
+
+     public void OnCoinClicked() {
+
+        // Locate the instantiated coin position.
+        
+        xpos = poofPlaceHolder.transform.position.x;
+        zpos = poofPlaceHolder.transform.position.z;
+
+        //instantiate the poof prefab
+
+        {
+            Object.Instantiate(poof, new Vector3(xpos,0, zpos), Quaternion.Euler(0,0,0));
+            
+        }
+
+        Destroy(coin);
+        Destroy(poofPlaceHolder);
+
+
+        //print checks
+        print("made the poof at " + poofPlaceHolder.transform.position.x + ", " + coin.transform.position.y + ", " + coin.transform.position.z);
+        print("you got the coin, stupid!");
+    }
+}
